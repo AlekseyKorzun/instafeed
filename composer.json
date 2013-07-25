@@ -1,0 +1,25 @@
+{
+	"name": "alekseykorzun/instafeed",
+	"description": "Lightweight Instagram media retrieval via tags",
+	"keywords": ["php", "php5", "instagram", "client", "api", "tags", "media", "recent", "hash", "instafeed", "boostrap", "silex", "twig"],
+	"homepage": "https://github.com/AlekseyKorzun/instafeed",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Aleksey Korzun",
+			"email": "al.ko@webfoundation.net",
+			"homepage": "http://www.alekseykorzun.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+        "slim/slim": "2.*",
+        "slim/extras": "2.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Instafeed": "src/"
+		}
+	}
+}
