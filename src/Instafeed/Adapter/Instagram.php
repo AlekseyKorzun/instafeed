@@ -194,24 +194,6 @@ class Instagram
     }
 
     /**
-     * Retrieve recent posts that match passed tag
-     *
-     * @param string $name tag to filter on
-     * @return string|bool
-     */
-    public function tags($name)
-    {
-        $this->resource = '/v1/tags/' . trim((string)$name) . '/media/recent';
-        $this->request(self::METHOD_GET);
-
-        if ($this->responseCode == 200) {
-            return $this->response;
-        }
-
-        return false;
-    }
-
-    /**
      * Retrieves authentication token based on code returned from Instagram
      *
      * @return string|bool
