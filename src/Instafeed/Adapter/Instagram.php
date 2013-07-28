@@ -3,6 +3,15 @@ namespace Instafeed\Adapter;
 
 use \Instafeed\Adapter\Instagram\Exception;
 
+/**
+ * Instagram adapter for API calls
+ *
+ * @version 1.0.0
+ * @license bsd
+ * @author Aleksey Korzun <al.ko@webfoundation.net>
+ * @link https://github.com/AlekseyKorzun/instafeed
+ * @link http://www.alekseykorzun.com
+ */
 class Instagram
 {
     /**
@@ -172,7 +181,8 @@ class Instagram
 
         if (curl_errno($curl) > 0) {
             throw new Exception(
-                'Unable to process this request. cURL error: ' . curl_errno($curl)
+                'Unable to process this request. cURL error: '
+                    . curl_errno($curl)
             );
         }
 
@@ -181,7 +191,7 @@ class Instagram
         $curlInfo = curl_getinfo($curl);
 
         if (!empty($curlInfo['http_code'])) {
-            $this->responseCode = (int)$curlInfo['http_code'];
+            $this->responseCode = (int) $curlInfo['http_code'];
 
             if ($this->responseCode == '400') {
                 throw new Exception(
@@ -196,6 +206,7 @@ class Instagram
     /**
      * Retrieves authentication token based on code returned from Instagram
      *
+     * @param string $code code received from call-back POST made by Instagram
      * @return string|bool
      */
     public function token($code)
@@ -260,7 +271,7 @@ class Instagram
      */
     public function setToken($token)
     {
-        $this->token = (string)$token;
+        $this->token = (string) $token;
     }
 
     /**
@@ -280,7 +291,7 @@ class Instagram
      */
     public function setRedirectUri($uri)
     {
-        $this->redirectUri = (string)$uri;
+        $this->redirectUri = (string) $uri;
     }
 
     /**
@@ -298,3 +309,4 @@ class Instagram
         return $this->redirectUri;
     }
 }
+

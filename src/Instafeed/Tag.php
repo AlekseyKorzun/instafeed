@@ -3,7 +3,15 @@ namespace Instafeed;
 
 use \Instafeed\Adapter\Instagram;
 
-
+/**
+ * Tag end-point implementation for Instagram's API
+ *
+ * @version 1.0.0
+ * @license bsd
+ * @author Aleksey Korzun <al.ko@webfoundation.net>
+ * @link https://github.com/AlekseyKorzun/instafeed
+ * @link http://www.alekseykorzun.com
+ */
 class Tag extends Instagram
 {
     /**
@@ -14,7 +22,7 @@ class Tag extends Instagram
      */
     public function info($name)
     {
-        $this->resource = '/v1/tags/' . trim((string)$name);
+        $this->resource = '/v1/tags/' . trim((string) $name);
         $this->request(self::METHOD_GET);
 
         if ($this->responseCode == 200) {
@@ -45,7 +53,6 @@ class Tag extends Instagram
         return false;
     }
 
-
     /**
      * Retrieve recent posts that match passed tag
      *
@@ -56,7 +63,7 @@ class Tag extends Instagram
      */
     public function recent($name, $minimum = null, $maximum = null)
     {
-        $this->resource = '/v1/tags/' . trim((string)$name) . '/media/recent';
+        $this->resource = '/v1/tags/' . trim((string) $name) . '/media/recent';
 
         if (!is_null($minimum) || !is_null($maximum)) {
             $this->request = array();
@@ -79,3 +86,4 @@ class Tag extends Instagram
         return false;
     }
 }
+

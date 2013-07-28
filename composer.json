@@ -1,9 +1,9 @@
 {
 	"name": "alekseykorzun/instafeed",
-	"description": "Lightweight Instagram media retrieval via tags",
-	"keywords": ["php", "php5", "instagram", "client", "api", "tags", "media", "recent", "hash", "instafeed", "boostrap", "silex", "twig"],
+	"description": "Lightweight Instagram API client written in PHP with build in Tag support",
+	"keywords": ["php", "php5", "instagram", "client", "api", "tags", "media", "recent", "hash", "symphony", "instafeed", "boostrap", "silex", "twig"],
 	"homepage": "https://github.com/AlekseyKorzun/instafeed",
-	"license": "MIT",
+	"license": "BSD-4-Clause-UC",
 	"authors": [
 		{
 			"name": "Aleksey Korzun",
@@ -14,8 +14,9 @@
 	],
 	"require": {
 		"php": ">=5.3.0",
-        "slim/slim": "2.*",
-        "slim/extras": "2.*"
+        "silex/silex": "1.*",
+        "symfony/twig-bridge": "~2.3",
+        "twig/twig": ">=1.8,<2.0-dev"
 	},
 	"autoload": {
 		"psr-0": {
